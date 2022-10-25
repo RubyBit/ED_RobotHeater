@@ -35,8 +35,6 @@ void setup() {
   y_servo = ESP32_ISR_Servos.setupServo(2, 500, 2500);// y is pin 2
   ESP32_ISR_Servos.setPosition(y_servo, initial_y); // set 20 if doesnt work
   ESP32_ISR_Servos.setPosition(x_servo, initial_x);
-  ESP32_ISR_Servos.setPulseWidth(y_servo, 1500);
-  ESP32_ISR_Servos.setPulseWidth(x_servo, 1500);
 
   Serial.begin(115200);
   Serial.setDebugOutput(true);
@@ -176,7 +174,7 @@ void rotate(int x, int y) {
 void rotate_man(int degree_x, int degree_y) {
   ESP32_ISR_Servos.setPosition(x_servo, degree_x);
   ESP32_ISR_Servos.setPosition(y_servo, degree_y);
-  delay(30);
+  delay(100);
 }
 
 // Add the main program code into the continuous loop() function
